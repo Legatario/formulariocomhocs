@@ -8,6 +8,7 @@
 # Formulario com React
 
 Este é um projeto de exemplo que demonstra a criação de um formulário utilizando a biblioteca React. O formulário foi desenvolvido como uma aplicação web responsiva, onde os usuários podem preencher informações pessoais e enviá-las.
+Os HOCs são usados para adicionar funcionalidades comuns, como manipulação de estado, gerenciamento de autenticação, roteamento, lógica de redenrização condicional, entre outros. Eles ajudam a separar as preocupações e promovem a reutilização do código.
 
 # Funcionalidades
 
