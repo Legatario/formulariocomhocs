@@ -1,8 +1,9 @@
 import React from 'react';
+import './Display.css';
 
 const Display = ({ formData, errors, handleChange, handleSubmit }) => {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="display-container">
       <div>
         <label htmlFor="name">Nome:</label>
         <input

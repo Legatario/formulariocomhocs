@@ -1,0 +1,43 @@
+.display-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .display-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .display-container >div{
+    margin-bottom: 5px;
+  }
+  
+  .display-container span {
+    font-weight: bold;
+    color: red;
+  }
+  
+  
+  .display-container button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .display-container button:hover {
+    background-color: #45a049;
+  }
+
+  .display-container input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    margin-bottom: 10px;
+  }

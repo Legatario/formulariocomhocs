@@ -1,10 +1,13 @@
 import React, {useState} from "react";
+import Submitted from "../submitted/Submitted";
 
 const WithFormValidation = (Display) => {
     const FormValidation = (props) =>{
         const [formData, setFormData] = useState({});
         const [errors, setErrors] = useState({});
+        const [subForm, setSubForm] = useState({});
 
+        //retorno de input
         const handleChange = (e) => {
             const { name, value } = e.target;
             setFormData((prevData) => ({
@@ -13,6 +16,7 @@ const WithFormValidation = (Display) => {
             }));
         };
 
+        //chamada para validação de campos e retorno para cadastro realizado
         const handleSubmit = (e) =>{
             e.preventDefault();
             const validationErrors = validateForm(formData)
@@ -21,12 +25,14 @@ const WithFormValidation = (Display) => {
             
             if(Object.keys(validationErrors).length === 0){
                 console.log("Formulario enviado:", formData);
+                setSubForm(formData);
 
                 setFormData({});
                 setErrors({});
             }
         }
 
+        //validação de campos
         const validateForm = (data) =>{
             const errors = {};
             const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -45,25 +51,29 @@ const WithFormValidation = (Display) => {
             if(!data.email){
                 errors.email = 'Campo obrigatório'
             }
-            if(!data.passoword){
-                errors.passoword = 'Campo Obrigatorio'
+            if(!data.password){
+                errors.password = 'Campo Obrigatorio'
             }
-            if(data.passoword){
-                if(data.passoword.length < 3 && data.passoword){
-                    errors.passoword = 'Nome deve conter mais de 3 caracteres'
+            if(data.password){
+                if(data.password.length < 3 && data.password){
+                    errors.password = 'Nome deve conter mais de 3 caracteres'
                 }
             }
             return errors;
         }
-        
         return(
-            <Display
-            formData={formData}
-            errors={errors}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-            {...props}
-          />
+            <div>
+                <Display
+                formData={formData}
+                errors={errors}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+                {...props}
+              />
+                {Object.keys(subForm).length > 0 && 
+                <Submitted data={subForm}
+                />}
+            </div>
         )
     }
 
