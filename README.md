@@ -33,8 +33,8 @@ Password: campo de texto para inserir a senha do usuario. <br>
 1. Certifique-se de ter o Node.js e o npm instalados em sua máquina.
 2. Faça o download ou clone este repositório.
 3. Navegue até o diretório raiz do projeto.
-4. Execute o seguinte comando para instalar as dependências:
-5. Em seguida, execute o comando para iniciar o aplicativo:
+4. Execute o seguinte comando para instalar as dependências: npm install
+5. Em seguida, execute o comando para iniciar o aplicativo: npm start
 6. Abra o navegador e acesse [http://localhost:3000](http://localhost:3000) para ver o componente em ação.
 
 
